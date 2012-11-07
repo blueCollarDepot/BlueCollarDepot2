@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
-<!-- TODO: link on bottom dnw: https://github.com/zoovy/AnyCommerce-Development/wiki/GettingStarted -->
+<!-- TODO: quickstart: link on bottom dnw: https://github.com/zoovy/AnyCommerce-Development/wiki/GettingStarted -->
 <!-- TODO: bring up minify for css -->
-<!-- TODO: typo in quickstart - step 1 - add '//' to http -->
+<!-- TODO: quickstart: typo - step 1 - add '//' to http -->
 <!-- TODO: Is there a complete list of all controller actions? -->
 <html>
 <head>
@@ -94,54 +94,63 @@ app.u.loadScript(app.vars.baseURL+"_blueCollarDepot_darrells_init.js");
 			<!-- VIEW CONTENT -->
 			<!-- leave the appView div, put your your html here ...  -->
 			<header>
-				<div id='topLogo' class='topLogo'>
-					<a href="#category?navcat=homepage" title='Home'><!-- TODO: add logo --></a>
-				</div>
-				<nav>
-					<ul id='navTop' class='listStyleNone noPadOrMargin navTop'>
-						<li><a href="#customer?show=myaccount" 	class='bindByAnchor'>My Account</a><span class='navSeparator'></span></li>
-						<li><a href="#customer?show=orders" 		class='bindByAnchor'>Order Status</a><span class='navSeparator'></span></li>
-						<li><a href="#customer?show=orders" 		class='bindByAnchor'>Wish Lists</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
-						<li><a href="#customer?show=orders" 		class='bindByAnchor'>Gift Certificates</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
-						<li><a href="#customer?store=cart" 			class='bindByAnchor'><span class='cartIcon'></span>View Cart</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
-						<li><a href="#customer?show=newsletter"	class='bindByAnchor'>Sign in or Create an account</a></li><!-- TODO: Add right link -->
+				<span id='topLogo' class='topLogo'>
+					<a href="#category?navcat=homepage" title='Blue Collar Depot'></a>
+				</span>
+				<nav id='navTop' class='navTop'>
+					<ul>
+						<li><a href="#customer?show=myaccount" 	class='bindByAnchor' title='My Account'>My Account</a><span class='navSeparator'></span></li>
+						<li><a href="#customer?show=orders" 		class='bindByAnchor' title='Order Status'>Order Status</a><span class='navSeparator'></span></li>
+						<li><a href="#customer?show=orders" 		class='bindByAnchor' title='Wish Lists'>Wish Lists</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
+						<li><a href="#customer?show=orders" 		class='bindByAnchor' title='Gift Certificates'>Gift Certificates</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
+						<li><a href="#customer?store=cart" 			class='bindByAnchor' title='View Cart'><span class='cartIcon'></span>View Cart</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
+						<li><a href="#customer?show=newsletter"	class='bindByAnchor' title='Sign in or Create an account'>Sign in or Create an account</a></li><!-- TODO: Add right link -->
 					</ul>
 				</nav>
-				<div class='phoneNumber'>
-					<h3>Call us on (877) 855-8566</h3><!-- TODO: Is this a link? -->
-				</div>
-				<nav class='navMain'>
-					<ul id='navBigLinks' class='listStyleNone noPadOrMargin navBigLinks'>
+				<h3 class='phoneNumber'>Call us on (877) 855-8566</h3><!-- TODO: Is this a link? -->
+				<nav id='navBigLinks' class='navBigLinks'>
+					<ul>
 						<li>
 							<a href="customer?show=returns" class='bindByAnchor'><!-- TODO: Add right link -->
-								<span class='bigLinkIcon returnIcon'></span>
-								<span class='bigLinkText'>
-									<span class='bigLinkTitle'>Free Returns</br></span>on product Exchanges
+								<span class='bigLinkBox'>
+									<span class='bigLinkIcon returnIcon'></span>
+								</span>
+								<span class='bigLinkBox'>
+									<h4>Free Returns</h4>
+									on product Exchanges
 								</span>
 							</a>
 						</li>
 						<li>
 							<a href="customer?show=returns" class='bindByAnchor'><!-- TODO: Add right link -->
-								<span class='bigLinkIcon moneyIcon'></span>
-								<span class='bigLinkText'>
-									<span class='bigLinkTitle'>120% Price Watch</br></span>Best Price Guaranteed
-								</span></a>
-							</li>
+								<span class='bigLinkBox'>
+									<span class='bigLinkIcon moneyIcon'></span>
+								</span>
+								<span class='bigLinkBox'>
+									<h4>120% Price Watch</h4>
+									Best Price Guaranteed
+								</span>
+							</a>
+						</li>
 						<li>
 							<a href="customer?store=cart" class='bindByAnchor'><!-- TODO: Add right link -->
-								<span class='bigLinkIcon basketIcon'></span>
-							</a>
-							<span class='bigLinkText'>
-								<a href="customer?store=cart" class='bindByAnchor'><!-- TODO: Add right link -->
+								<span class='bigLinkBox'>
+									<span class='bigLinkIcon basketIcon'></span>
+								</span>
+								<span class='bigLinkBox'>
 									0 items<!-- TODO: Add item count -->
-								</a>
-								<a href=""><!-- TODO: Add right link -->
+								</span>
+							</a>
+							<a href="#"><!-- TODO: Add right link -->
+								<span class='bigLinkBox'>
 									<span class='checkoutButton'>Checkout</span>
-								</a>
-							</span>
+								</span>
+							</a>
 						</li><!-- TODO: Is cart and checkout same href? -->
 					</ul>
-					<ul id='navCategories' class='listStyleNone noPadOrMargin navCategories'>
+				</nav>
+				<nav id='navMenu' class='navMenu'>
+					<ul>
 						<li></li>
 						<li></li>
 						<li></li>

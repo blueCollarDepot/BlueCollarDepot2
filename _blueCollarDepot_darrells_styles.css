@@ -1,4 +1,4 @@
- Blue Collar Depot - CSS */
+/* Blue Collar Depot - CSS */
 
 /* universal */
 
@@ -30,9 +30,9 @@ section {
   overflow: auto;
 }
 
-textarea {
-  /*resize: vertical;*/
-}
+/*textarea {
+  resize: vertical;
+}*/
 
 img {
   /*max-width: 100%;*/
@@ -43,8 +43,16 @@ img {
 
 /* typography */
 
+html {
+  font-size: 16px;
+  text-align: left;
+}
+
+body {
+  font-size: 62.5%; /* 10px */
+}
+
 h1, h2, h3, h4, h5, h6 {
-  /*line-height: 1;*/
  /* color: ;
   font-family: ;*/
   font-weight: bold;
@@ -53,21 +61,21 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.3em;
 }
 
-p, li {
+p {
  /* color: ;
   font-family: ;*/
-  font-size: 1em;
-  line-height: 1.3em;
+  font-size: 1.2em;
+  line-height: 1.5em;
   text-rendering: optimizelegibility;
 }
 
 h1 {
   font-size: 1.7em;
-  line-height: 1em;
+  line-height: 2em;
   letter-spacing: -1px;
   margin-top: 0.1em;
   margin-bottom: 0.4em;
-  text-align: left;
+  /*text-align: left;*/
   font-weight: normal;
 }
 
@@ -75,15 +83,15 @@ h2 {
   font-size: 1.7em;
   line-height: 1.8em;
   letter-spacing: -1px;
-  text-align: left;
+  /*text-align: left;*/
   font-weight: normal;
   /*color: ;*/
   /*display: block;*/
 }
 
 h3 {
-  font-size: 1.3em;
-  line-height: 1.4em;
+  font-size: 1.4em;
+  line-height: 1.6em;
   /*color: ;*/
   font-weight: normal;
   margin-top: 0.1em;
@@ -93,8 +101,8 @@ h3 {
 h4,
 h5,
 h6 {
-  font-size: 1.1em;
-  line-height: 1.2em;
+  font-size: 1.3em;
+  line-height: 1.5em;
 }
 
 p {
@@ -144,6 +152,10 @@ a:hover {
   text-decoration: none;
 }
 
+a:active {
+  text-decoration: none;
+}
+
 /* General */
 
 .mainContainer {
@@ -155,6 +167,20 @@ a:hover {
 
 /* Navigation */
 
+/*nav {
+  display: inline-block;
+}*/
+
+nav ul, nav li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  /*float: left;*/
+  display: inline-block;
+}
+
+/* Top navigation */
+
 .navSeparator:after {
 	margin: 0 0 0 0.6em;
   content: '|';
@@ -162,8 +188,8 @@ a:hover {
 
 .cartIcon {
 	margin-right: 5px;
-	width: 20px;
-	height: 20px;
+	width: 15px;
+	height: 15px;
 	background-color: gray; /* TODO: Add cart icon */
 	display: inline-block;
 	vertical-align: middle;
@@ -171,7 +197,7 @@ a:hover {
 
 .navTop {
   text-align: right;
-  display: block;
+  /*display: block;*/
   /*background-color: black;*/
 }
 
@@ -182,7 +208,7 @@ a:hover {
 	padding: 0.3em 0.1em;
 	display:inline-block;
 	/*background-color: blue;*/
-	font-size: 0.8em;
+	font-size: 1.1em;
 }
 
 .navTop a:link {
@@ -201,42 +227,56 @@ a:hover {
 	text-decoration: none;
 }
 
-/*.navTop li:after {
-	content: '|';
-}*/
+.navTop a:active {
+  text-decoration: none;
+}
+
+/* Menu navigation */
+
+.navMenu, .navBigLinks {
+  /*display:inline-block;*/
+  font-family: arial; /*TODO: get right font;*/
+  /*text-align: right;*/
+}
+
+.navMenu a:link, .navBigLinks a:link {
+  color: #333; /*TODO: get right colors*/
+  text-decoration: none;
+}
+
+.navMenu a:visited, .navBigLinks a:visited {
+  color: #333; /*TODO: get right colors*/
+  text-decoration: none;
+}
+
+.navMenu a:hover, .navBigLinks a:hover {
+  color: #111; /*TODO: get right colors*/
+  text-decoration: none;
+}
+
+.navMenu a:active, .navBigLinks a: active {
+  text-decoration: none;
+}
 
 .navBigLinks {
   text-align: right;
-  display: block;
+  /*display: block;*/
   /*background-color: black;*/
 }
 
-.navMain {
-	/*display:inline-block;*/
-	font-family: arial; /*TODO: get right font;*/
-}
-
-.navMain a:link {
-	color: #333; /*TODO: get right colors*/
-	text-decoration: none;
-}
-
-.navMain a:visited {
-	color: #333; /*TODO: get right colors*/
-	text-decoration: none;
-}
-
-.navMain a:hover {
-	color: #111; /*TODO: get right colors*/
-	text-decoration: none;
+.navBigLinks a {
+  display: inline-block;
+  height: 100%;
 }
 
 .navBigLinks li {
-	/*width: 200px;*/
+	width: 200px;
+  height: 40px;
 	margin: 0;
-	padding: 0.3em 0.1em;
-	display:inline-block;
-	font-size: 0.8em;
+	/*padding: 0.3em 0.1em;*/
+  /*height: 60px;*/
+	/*display: inline-block;*/
+	font-size: 1em;
 	text-align: center;
 	border: 1px solid #111;
 	border-top-left-radius: 10px;
@@ -244,29 +284,60 @@ a:hover {
 	vertical-align: bottom;
 }
 
+.navBigLinks h4 {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  text-align: justify;
+  text-justify: auto;
+  font-size: 1.5em;
+  line-height: 1em;
+  white-space:nowrap;
+  /*TODO: figure out how to squeeze text */
+}
+
+.bigLinkBox {
+  /*height: 100%;*/
+  display: inline-block;
+  /*vertical-align: middle;*/
+}
+
+.bigLinkIcon {
+  width: 30px;
+  height: 30px;
+  /*vertical-align: middle;*/
+  background-color: blue; /* TODO: remove after adding image;*/
+  display: inline-block;
+}
+
+/*.bigLinkText, .bigLinkIcon {
+  margin: 10px 0;
+  height: 100%;
+}
+
 .bigLinkText {
 	width: 160px;
 	height: 40px;
 	display: inline-block;
-	/*vertical-align: bottom;*/
+	vertical-align: bottom;
 }
 
 .bigLinkTitle {
 	text-transform: uppercase;
 	text-align: justify;
-	/*text-justify: auto;*/
+	text-justify: auto;
 	font-size: 1.5em;
 	white-space:nowrap;
-	/* TODO: figure out how to squeeze text */
+	 TODO: figure out how to squeeze text 
 }
 
 .bigLinkIcon {
 	width: 40px;
 	height: 40px;
 	vertical-align: middle;
-	background-color: blue;  /*TODO: remove after adding image;*/
+	background-color: blue;  TODO: remove after adding image;
 	display: inline-block;
-}
+}*/
 
 .returnIcon {
 	/*TODO: add image;*/
@@ -280,24 +351,25 @@ a:hover {
 	/*TODO: add image;*/
 }
 
-
 /* Logo */
 
 .topLogo {
-	width: 200px;
-	height: 150px;
+	/*width: 200px;
+	height: 150px;*/
 	background-color: gray; /* TODO: add image bg; */
 	float: left;
 }
 
-/*.topLogo a {
-	width: 300px;
-	height: 200px;
-	display: block;
-}*/
+.topLogo a {
+	width: 200px;
+	height: 150px;
+	display: inline-block;
+}
 
 .phoneNumber {
-	margin: 30px 0 20px;
+	margin: 20px 0 15px;
+  padding: 0;
 	text-align: right;
+  font-size: 1.8em;
 	/* TODO: Add right font; */
 }
