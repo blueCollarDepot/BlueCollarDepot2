@@ -1,2 +1,4 @@
 *.sublime-*
 *.backup
+
+client_files/*
