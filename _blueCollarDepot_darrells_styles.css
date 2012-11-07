@@ -1,0 +1,303 @@
+ Blue Collar Depot - CSS */
+
+/* universal */
+
+aside,
+details,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+html {
+  overflow-y: auto;
+  /*padding-top: 0;*/
+  /*margin-top: 0;*/
+}
+
+body {
+  /*width: 100%;*/
+  padding-top: 0;
+  margin-top: 0;
+  /*font-family: ;
+  color: ;
+  background-color: ;*/
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  /*resize: vertical;*/
+}
+
+img {
+  /*max-width: 100%;*/
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  /*line-height: 1;*/
+ /* color: ;
+  font-family: ;*/
+  font-weight: bold;
+  text-rendering: optimizelegibility;
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+p, li {
+ /* color: ;
+  font-family: ;*/
+  font-size: 1em;
+  line-height: 1.3em;
+  text-rendering: optimizelegibility;
+}
+
+h1 {
+  font-size: 1.7em;
+  line-height: 1em;
+  letter-spacing: -1px;
+  margin-top: 0.1em;
+  margin-bottom: 0.4em;
+  text-align: left;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 1.7em;
+  line-height: 1.8em;
+  letter-spacing: -1px;
+  text-align: left;
+  font-weight: normal;
+  /*color: ;*/
+  /*display: block;*/
+}
+
+h3 {
+  font-size: 1.3em;
+  line-height: 1.4em;
+  /*color: ;*/
+  font-weight: normal;
+  margin-top: 0.1em;
+  margin-bottom: 0.2em;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1.1em;
+  line-height: 1.2em;
+}
+
+p {
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0.3em 0;
+  /*font-size: 1.1em;*/
+  /*line-height: 1.1em;*/
+}
+
+ul {
+  list-style: square;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li {
+  margin: 0 0 0.1em 0;
+  padding: 0 0 0.1em 0;
+  /*line-height: 1.3em;*/
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+small {
+  font-size: 80%;
+  /*color: ;*/
+}
+
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* General */
+
+.mainContainer {
+	width: 1000px; /* TODO: Find correct width */
+	margin: 0 auto;
+}
+
+/* Header */
+
+/* Navigation */
+
+.navSeparator:after {
+	margin: 0 0 0 0.6em;
+  content: '|';
+}
+
+.cartIcon {
+	margin-right: 5px;
+	width: 20px;
+	height: 20px;
+	background-color: gray; /* TODO: Add cart icon */
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.navTop {
+  text-align: right;
+  display: block;
+  /*background-color: black;*/
+}
+
+.navTop li	{
+	/* BUG: space inbetween li's */
+	/*float:left;*/
+	margin: 0;
+	padding: 0.3em 0.1em;
+	display:inline-block;
+	/*background-color: blue;*/
+	font-size: 0.8em;
+}
+
+.navTop a:link {
+	/*TODO: edit colors*/
+	color: black;
+	text-decoration: none;
+}
+
+.navTop a:visited {
+	color: purple;
+	text-decoration: none;
+}
+
+.navTop a:hover {
+	color: gray;
+	text-decoration: none;
+}
+
+/*.navTop li:after {
+	content: '|';
+}*/
+
+.navBigLinks {
+  text-align: right;
+  display: block;
+  /*background-color: black;*/
+}
+
+.navMain {
+	/*display:inline-block;*/
+	font-family: arial; /*TODO: get right font;*/
+}
+
+.navMain a:link {
+	color: #333; /*TODO: get right colors*/
+	text-decoration: none;
+}
+
+.navMain a:visited {
+	color: #333; /*TODO: get right colors*/
+	text-decoration: none;
+}
+
+.navMain a:hover {
+	color: #111; /*TODO: get right colors*/
+	text-decoration: none;
+}
+
+.navBigLinks li {
+	/*width: 200px;*/
+	margin: 0;
+	padding: 0.3em 0.1em;
+	display:inline-block;
+	font-size: 0.8em;
+	text-align: center;
+	border: 1px solid #111;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	vertical-align: bottom;
+}
+
+.bigLinkText {
+	width: 160px;
+	height: 40px;
+	display: inline-block;
+	/*vertical-align: bottom;*/
+}
+
+.bigLinkTitle {
+	text-transform: uppercase;
+	text-align: justify;
+	/*text-justify: auto;*/
+	font-size: 1.5em;
+	white-space:nowrap;
+	/* TODO: figure out how to squeeze text */
+}
+
+.bigLinkIcon {
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+	background-color: blue;  /*TODO: remove after adding image;*/
+	display: inline-block;
+}
+
+.returnIcon {
+	/*TODO: add image;*/
+}
+
+.moneyIcon {
+	/*TODO: add image;*/
+}
+
+.basketIcon {
+	/*TODO: add image;*/
+}
+
+
+/* Logo */
+
+.topLogo {
+	width: 200px;
+	height: 150px;
+	background-color: gray; /* TODO: add image bg; */
+	float: left;
+}
+
+/*.topLogo a {
+	width: 300px;
+	height: 200px;
+	display: block;
+}*/
+
+.phoneNumber {
+	margin: 30px 0 20px;
+	text-align: right;
+	/* TODO: Add right font; */
+}

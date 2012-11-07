@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
 <!-- TODO: link on bottom dnw: https://github.com/zoovy/AnyCommerce-Development/wiki/GettingStarted -->
 <!-- TODO: bring up minify for css -->
-<!-- TODO: type in quickstart - step 1 - add '//' to http -->
+<!-- TODO: typo in quickstart - step 1 - add '//' to http -->
+<!-- TODO: Is there a complete list of all controller actions? -->
 <html>
 <head>
 <meta charset="utf-8">
-<title>QuickStart</title>
+<title>Blue Collar Depot</title>
 
 <meta name="description" content="" id='metaDescription' />
 <meta name="keywords" content="" id='metaKeywords' />
@@ -21,21 +22,21 @@
 
 
 <script type="text/javascript">
-var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPLOYMENT!
-var myCreole;
+	var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPLOYMENT!
+	var myCreole;
 
-var app = {vars:{
-	"release":"201210270525",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
-	"baseURL":"",
-	"httpsURL":"https://ssl.zoovy.com/s=www.sporks.zoovy.com/",
-	"httpURL":"http://www.sporks.zoovy.com/"
-	},u:{},rq:[]};
+	var app = {vars:{
+		"release":"201210270525",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+		"baseURL":"",
+		"httpsURL":"https://ssl.zoovy.com/s=www.sporks.zoovy.com/",
+		"httpURL":"http://www.sporks.zoovy.com/"
+		},u:{},rq:[]};
 
-//set base url so images, css, js, etc all load from appropriate location once deployed.
-//baseURL as blank lets loadScript function run off local copy when testing locally.
-if(document.location.protocol != 'file:')	{
-	app.vars.baseURL  = "https:" == document.location.protocol ? app.vars.httpsURL : app.vars.httpURL; 
-	document.getElementsByTagName('base')[0].href = app.vars.baseURL;
+	//set base url so images, css, js, etc all load from appropriate location once deployed.
+	//baseURL as blank lets loadScript function run off local copy when testing locally.
+	if(document.location.protocol != 'file:')	{
+		app.vars.baseURL  = "https:" == document.location.protocol ? app.vars.httpsURL : app.vars.httpURL; 
+		document.getElementsByTagName('base')[0].href = app.vars.baseURL;
 	}
 </script>
 
@@ -46,7 +47,7 @@ css files should be included before any .js file to ensure they are downloaded i
 -->
 <link rel="stylesheet" type="text/css" href="qs_styles.css" />
 <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/redmond/jquery-ui.css" />
-<link rel="stylesheet" type="text/css" href="blueCollarDepot_darrells_custom.css" />
+<link rel="stylesheet" type="text/css" href="_blueCollarDepot_darrells_styles.css" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src="loadscript.js"></script>
@@ -62,48 +63,108 @@ app.u.loadScript(app.vars.baseURL+"_blueCollarDepot_darrells_init.js");
 </head>
 
 <body>
-<h1>Blue Collar Depot</h1>
-
+<!-- <h1>Blue Collar Depot</h1> -->
 
 
 
 <!-- what is displayed onLoad until the view is loaded -->
-<div id='appPreView'>
-<table>
-<tr>
-	<td><!-- put logo here --></td>
-	<td>
-	<h3>One moment please.</h3>
-	
-	<div class='alignCenter'>
-	<progress id="appPreViewProgressBar" max="100" value="0" /><br />
+	<div id='appPreView'>
+		<table>
+			<tr>
+				<td><!-- put logo here --></td>
+				<td>
+					<h3>One moment please.</h3>
+				
+				<div class='alignCenter'>
+					<progress id="appPreViewProgressBar" max="100" value="0" /><br />
+				</div>
+				<div id='appPreViewProgressText'>0% Complete</div>
+				
+				<div class='appMessaging'></div>
+				</td>
+			</tr>
+		</table>
 	</div>
-	<div id='appPreViewProgressText'>0% Complete</div>
-	
-	<div class='appMessaging'></div>
-	</td>
-</tr>
-</table>
-</div>
 
 
 
-<div id='appView' class='displayNone'>
-<ul id='tier1categories'></ul>
-<!-- VIEW CONTENT -->
-<!-- leave the appView div, put your your html here ...  -->
+	<div id='appView' class='displayNone'>
+		<div class='mainContainer'>
+			<!-- <ul id='tier1categories'></ul> -->
+			<!-- VIEW CONTENT -->
+			<!-- leave the appView div, put your your html here ...  -->
+			<header>
+				<div id='topLogo' class='topLogo'>
+					<a href="#category?navcat=homepage" title='Home'><!-- TODO: add logo --></a>
+				</div>
+				<nav>
+					<ul id='navTop' class='listStyleNone noPadOrMargin navTop'>
+						<li><a href="#customer?show=myaccount" 	class='bindByAnchor'>My Account</a><span class='navSeparator'></span></li>
+						<li><a href="#customer?show=orders" 		class='bindByAnchor'>Order Status</a><span class='navSeparator'></span></li>
+						<li><a href="#customer?show=orders" 		class='bindByAnchor'>Wish Lists</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
+						<li><a href="#customer?show=orders" 		class='bindByAnchor'>Gift Certificates</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
+						<li><a href="#customer?store=cart" 			class='bindByAnchor'><span class='cartIcon'></span>View Cart</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
+						<li><a href="#customer?show=newsletter"	class='bindByAnchor'>Sign in or Create an account</a></li><!-- TODO: Add right link -->
+					</ul>
+				</nav>
+				<div class='phoneNumber'>
+					<h3>Call us on (877) 855-8566</h3><!-- TODO: Is this a link? -->
+				</div>
+				<nav class='navMain'>
+					<ul id='navBigLinks' class='listStyleNone noPadOrMargin navBigLinks'>
+						<li>
+							<a href="customer?show=returns" class='bindByAnchor'><!-- TODO: Add right link -->
+								<span class='bigLinkIcon returnIcon'></span>
+								<span class='bigLinkText'>
+									<span class='bigLinkTitle'>Free Returns</br></span>on product Exchanges
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="customer?show=returns" class='bindByAnchor'><!-- TODO: Add right link -->
+								<span class='bigLinkIcon moneyIcon'></span>
+								<span class='bigLinkText'>
+									<span class='bigLinkTitle'>120% Price Watch</br></span>Best Price Guaranteed
+								</span></a>
+							</li>
+						<li>
+							<a href="customer?store=cart" class='bindByAnchor'><!-- TODO: Add right link -->
+								<span class='bigLinkIcon basketIcon'></span>
+							</a>
+							<span class='bigLinkText'>
+								<a href="customer?store=cart" class='bindByAnchor'><!-- TODO: Add right link -->
+									0 items<!-- TODO: Add item count -->
+								</a>
+								<a href=""><!-- TODO: Add right link -->
+									<span class='checkoutButton'>Checkout</span>
+								</a>
+							</span>
+						</li><!-- TODO: Is cart and checkout same href? -->
+					</ul>
+					<ul id='navCategories' class='listStyleNone noPadOrMargin navCategories'>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</nav>
+			</header>
+				<!-- 
+				** REMINDER : DO NOT PUT ANY GRAPHICS/CONTENT THAT SHOULD NOT APPEAR ON EVERY PAGE IN THE VIEW (HERE)
+				**				  INSTEAD PUT THEM INTO <div id="homepageTemplate"></div>
+				-->
+			<div id='globalMessaging' class='appMessaging'></div><!-- DO NOT REMOVE - used for some high level error handling (usually appears below breadcrumb nav or top bar) -->
+			<div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
 
-	<!-- 
-	** REMINDER : DO NOT PUT ANY GRAPHICS/CONTENT THAT SHOULD NOT APPEAR ON EVERY PAGE IN THE VIEW (HERE)
-	**				  INSTEAD PUT THEM INTO <div id="homepageTemplate"></div>
-	-->
-<div id='globalMessaging' class='appMessaging'></div><!-- DO NOT REMOVE - used for some high level error handling (usually appears below breadcrumb nav or top bar) -->
-<div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
 
-
-<!-- ... your html ends -->
-<!-- /VIEW CONTENT -->
-</div>
+			<!-- ... your html ends -->
+			<!-- /VIEW CONTENT -->
+			<footer>
+				Footer
+			</footer>
+		</div>
+	</div>
 
 
 
@@ -1325,96 +1386,88 @@ The 'data-action' attribute is used to assign an onclick.
 
 
 
-<div id='loginFormForModal' class='loginOption displayNone' title='Please log in'>
+	<div id='loginFormForModal' class='loginOption displayNone' title='Please log in'>
 
-<!-- the contents of this div/id are toggled on/off when login/logout occurs. don't change the ID -->
+		<!-- the contents of this div/id are toggled on/off when login/logout occurs. don't change the ID -->
 
 
-<p id='loginMessaging' class='marginBottom appMessaging'></p>
+		<p id='loginMessaging' class='marginBottom appMessaging'></p>
 
-<div id='loginFormContainer'>
-<form action='#' onSubmit='app.ext.myRIA.u.loginFrmSubmit($("#modalLoginlogin").val(),$("#modalLoginpassword").val()); return false;' id='modalLoginForm'>
-<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
-	<fieldset>
-	
-	<div>
-	<label for='modalLoginlogin'>Login/Email</label>
-	<input type='email' class='zform_textbox zform_email'  name='login' id='modalLoginlogin' value='' size='25' />
+		<div id='loginFormContainer'>
+			<form action='#' onSubmit='app.ext.myRIA.u.loginFrmSubmit($("#modalLoginlogin").val(),$("#modalLoginpassword").val()); return false;' id='modalLoginForm'>
+				<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
+					<fieldset>
+					
+						<div>
+							<label for='modalLoginlogin'>Login/Email</label>
+							<input type='email' class='zform_textbox zform_email'  name='login' id='modalLoginlogin' value='' size='25' />
+						</div>
+						
+						<div>
+							<label for='modalLoginpassword'>Password</label>
+							<input type='password' class='zform_textbox zform_password'   name='password' id='modalLoginpassword' value='' size='25' />
+						</div>
+						
+						<div>
+							<input type='submit' value='log in' class='ui-button-text ui-button ui-state-default ui-corner-all ' />
+							</div>
+					</fieldset>
+			</form>
+
+			<div id='recoverPasswordContainer'>
+				<hr />
+
+				<h3 class='marginBottom'>Recover Password</h3>
+				<div id='recoverPasswordMessaging'></div>
+				<form action='#' onSubmit="app.ext.store_crm.calls.appBuyerPasswordRecover.init($('#passwordRecoveryLogin').val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','targetID':'recoverPasswordMessaging'}); app.model.dispatchThis('immutable'); return false;">
+					<fieldset>
+						<div class='marginBottom'><label for='passwordRecoveryLogin'>Login/Email</label> <input type='text' name='login' required='required' id='passwordRecoveryLogin' size='25' /></div>
+
+						<div><input type='submit' class='ui-button-text ui-button ui-state-default ui-corner-all ' value='Email Password to Me' /></div>
+
+					</fieldset>
+				</form>
+			</div><!-- /recoverPasswordContainer -->
+
+			<div>
+				<hr />
+				<button class='ui-button-text ui-button ui-state-default ui-corner-all ' onClick="showContent('customer',{'show':'newsletter'});">Create Account</button>
+			</div>
+		</div>
+
+		<!-- this div will appear after a successful login. if you bind a new action to the button, best to empty the div and re-add the button, so the actions don't statck. -->
+		<div id='loginSuccessContainer' class='center displayNone'>
+			<button class='ui-button-text ui-button ui-state-default ui-corner-all ' id='modalLoginContinueButton' onClick="$('#loginFormForModal').dialog('close');">Continue</button>
+		</div>
 	</div>
-	
-	<div>
-	<label for='modalLoginpassword'>Password</label>
-	<input type='password' class='zform_textbox zform_password'   name='password' id='modalLoginpassword' value='' size='25' />
+
+
+
+	<div class='debug displayNone'>
+
+		<menu>
+			<li><a href='#' onClick="return showContent('category',{'navcat':'.'});">Homepage</a></li>
+			<li><a href='#' onClick="return showContent('customer',{'show':'orders'});">Orders</a></li>
+			<li><a href='#' onClick="return showContent('cart',{'show':'cart'});">Cart</a></li>
+			<li><a href='#' onClick="app.ext.store_cart.u.showCartInModal({'templateID':'cartTemplate'});">CartInModal</a></li>
+			<li><a href='#' onClick="return showContent('company',{'show':'return'});">Returns</a></li>
+			<li><a href='#' onClick="return showContent('company',{'show':'privacy'});">Privacy</a></li>
+			<li><a href='#' onClick="return quickView('category',{'navcat':'.air_fresheners','templateID':'categoryTemplate'});">Cat in Modal</a></li>
+			
+		</menu>
+		<button class='ui-button-text ui-button ui-state-default ui-corner-all' onClick="localStorage.clear(); return false;">Clear Local Storage</button>
+		<button class='ui-button-text ui-button ui-state-default ui-corner-all' onClick="app.u.dump(app); return false;">Control to Console</button>
+		<button class='ui-button-text ui-button ui-state-default ui-corner-all' onClick="app.u.loadCSSFile('examples/red.css','bg');">load red css</button>
+		<button class='ui-button-text ui-button ui-state-default ui-corner-all' onClick="alert(app.ext.store_checkout.u.thisSessionIsPayPal());">Alert isPaypal</button>
+		<button class='ui-button-text ui-button ui-state-default ui-corner-all' onClick="alert(app.ext.store_checkout.u.aValidPaypalTenderIsPresent());">Alert aValidPaypalTenderIsPresent</button>
+		
+		<form name='headerSearchFrm' action='#' class='productSearchForm' method="get">
+			<fieldset>
+			<legend>Search</legend>
+			<input type='search' name='KEYWORDS' value='Enter Search Term' class="productSearchKeyword handleDefault" />
+			</fieldset>
+			<input class="search" type="submit" value="Search" />
+		</form>
 	</div>
-	
-	<div>
-	<input type='submit' value='log in' class='ui-button-text ui-button ui-state-default ui-corner-all ' />
-	</div>
-	</fieldset>
-</form>
-
-<div id='recoverPasswordContainer'>
-<hr />
-
-<h3 class='marginBottom'>Recover Password</h3>
-<div id='recoverPasswordMessaging'></div>
-<form action='#' onSubmit="app.ext.store_crm.calls.appBuyerPasswordRecover.init($('#passwordRecoveryLogin').val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','targetID':'recoverPasswordMessaging'}); app.model.dispatchThis('immutable'); return false;">
-<fieldset>
-<div class='marginBottom'><label for='passwordRecoveryLogin'>Login/Email</label> <input type='text' name='login' required='required' id='passwordRecoveryLogin' size='25' /></div>
-
-<div><input type='submit' class='ui-button-text ui-button ui-state-default ui-corner-all ' value='Email Password to Me' /></div>
-
-</fieldset>
-</form>
-
-</div><!-- /recoverPasswordContainer -->
-
-<div>
-<hr />
-<button class='ui-button-text ui-button ui-state-default ui-corner-all ' onClick="showContent('customer',{'show':'newsletter'});">Create Account</button>
-</div>
-
-
-
-</div>
-
-<!-- this div will appear after a successful login. if you bind a new action to the button, best to empty the div and re-add the button, so the actions don't statck. -->
-	<div id='loginSuccessContainer' class='center displayNone'>
-		<button class='ui-button-text ui-button ui-state-default ui-corner-all ' id='modalLoginContinueButton' onClick="$('#loginFormForModal').dialog('close');">Continue</button>
-	</div>
-</div>
-
-
-
-<div class='debug displayNone'>
-
-<menu>
-	<li><a href='#' onClick="return showContent('category',{'navcat':'.'});">Homepage</a></li>
-	<li><a href='#' onClick="return showContent('customer',{'show':'orders'});">Orders</a></li>
-	<li><a href='#' onClick="return showContent('cart',{'show':'cart'});">Cart</a></li>
-	<li><a href='#' onClick="app.ext.store_cart.u.showCartInModal({'templateID':'cartTemplate'});">CartInModal</a></li>
-	<li><a href='#' onClick="return showContent('company',{'show':'return'});">Returns</a></li>
-	<li><a href='#' onClick="return showContent('company',{'show':'privacy'});">Privacy</a></li>
-	<li><a href='#' onClick="return quickView('category',{'navcat':'.air_fresheners','templateID':'categoryTemplate'});">Cat in Modal</a></li>
-	
-</menu>
-	<button class='ui-button-text ui-button ui-state-default ui-corner-all' onClick="localStorage.clear(); return false;">Clear Local Storage</button>
-	<button class='ui-button-text ui-button ui-state-default ui-corner-all' onClick="app.u.dump(app); return false;">Control to Console</button>
-	<button class='ui-button-text ui-button ui-state-default ui-corner-all' onClick="app.u.loadCSSFile('examples/red.css','bg');">load red css</button>
-	<button class='ui-button-text ui-button ui-state-default ui-corner-all' onClick="alert(app.ext.store_checkout.u.thisSessionIsPayPal());">Alert isPaypal</button>
-	<button class='ui-button-text ui-button ui-state-default ui-corner-all' onClick="alert(app.ext.store_checkout.u.aValidPaypalTenderIsPresent());">Alert aValidPaypalTenderIsPresent</button>
-	
-<form name='headerSearchFrm' action='#' class='productSearchForm' method="get">
-	<fieldset>
-	<legend>Search</legend>
-	<input type='search' name='KEYWORDS' value='Enter Search Term' class="productSearchKeyword handleDefault" />
-	</fieldset>
-	<input class="search" type="submit" value="Search" />
-</form>
-
-
-</div>
-
-
 </body>
 </html>
