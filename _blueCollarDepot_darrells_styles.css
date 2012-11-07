@@ -186,14 +186,14 @@ nav ul, nav li {
   content: '|';
 }
 
-.cartIcon {
+/*.cartIcon {
 	margin-right: 5px;
 	width: 15px;
 	height: 15px;
-	background-color: gray; /* TODO: Add cart icon */
+	background-color: gray; /* TODO: Add cart icon *\/
 	display: inline-block;
 	vertical-align: middle;
-}
+}*/
 
 .navTop {
   text-align: right;
@@ -266,14 +266,15 @@ nav ul, nav li {
 
 .navBigLinks a {
   display: inline-block;
-  height: 100%;
+  /*height: 100%;*/
+  /*vertical-align: middle;*/
 }
 
 .navBigLinks li {
-	width: 200px;
-  height: 40px;
+	width: 180px;
+  /*height: 40px;*/
 	margin: 0;
-	/*padding: 0.3em 0.1em;*/
+	padding: 0.3em 0.1em;
   /*height: 60px;*/
 	/*display: inline-block;*/
 	font-size: 1em;
@@ -281,25 +282,25 @@ nav ul, nav li {
 	border: 1px solid #111;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
-	vertical-align: bottom;
+	/*vertical-align: bottom;*/
 }
 
 .navBigLinks h4 {
   margin: 0;
   padding: 0;
   text-transform: uppercase;
-  text-align: justify;
-  text-justify: auto;
+  text-align: center;
   font-size: 1.5em;
   line-height: 1em;
   white-space:nowrap;
+  /*letter-spacing: -0.1em;*/
   /*TODO: figure out how to squeeze text */
 }
 
 .bigLinkBox {
   /*height: 100%;*/
   display: inline-block;
-  /*vertical-align: middle;*/
+  vertical-align: middle;
 }
 
 .bigLinkIcon {
@@ -310,34 +311,40 @@ nav ul, nav li {
   display: inline-block;
 }
 
-/*.bigLinkText, .bigLinkIcon {
-  margin: 10px 0;
-  height: 100%;
+.checkoutButton {
+  margin-left: 5px; 
+  padding: 0.2em 0.5em;
+  background-color: #FF4300; /*TODO: get right color;*/
+  color: white;
+  border: 1px solid #C0481D;
+  border-radius: 0.8em; 
+  /*TODO: add white gradient;*/
 }
 
-.bigLinkText {
-	width: 160px;
-	height: 40px;
-	display: inline-block;
-	vertical-align: bottom;
+.checkoutButton h4 {
+  display: inline-block;
+  line-height: 1em;
+  vertical-align: middle;
 }
 
-.bigLinkTitle {
-	text-transform: uppercase;
-	text-align: justify;
-	text-justify: auto;
-	font-size: 1.5em;
-	white-space:nowrap;
-	 TODO: figure out how to squeeze text 
+a:link .checkoutButton {
+  /*TODO: edit colors*/
+  text-decoration: none;
 }
 
-.bigLinkIcon {
-	width: 40px;
-	height: 40px;
-	vertical-align: middle;
-	background-color: blue;  TODO: remove after adding image;
-	display: inline-block;
-}*/
+a:visited .checkoutButton {
+  text-decoration: none;
+}
+
+a:hover .checkoutButton {
+  text-decoration: none;
+  background-color: #C0481D;
+  color: #999;
+}
+
+a:active .checkoutButton {
+  text-decoration: none;
+}
 
 .returnIcon {
 	/*TODO: add image;*/

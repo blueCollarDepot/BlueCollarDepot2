@@ -71,7 +71,7 @@ app.u.loadScript(app.vars.baseURL+"_blueCollarDepot_darrells_init.js");
 	<div id='appPreView'>
 		<table>
 			<tr>
-				<td><!-- put logo here --></td>
+				<td><!-- TODO: put logo here --></td>
 				<td>
 					<h3>One moment please.</h3>
 				
@@ -90,49 +90,46 @@ app.u.loadScript(app.vars.baseURL+"_blueCollarDepot_darrells_init.js");
 
 	<div id='appView' class='displayNone'>
 		<div class='mainContainer'>
-			<!-- <ul id='tier1categories'></ul> -->
 			<!-- VIEW CONTENT -->
-			<!-- leave the appView div, put your your html here ...  -->
 			<header>
 				<span id='topLogo' class='topLogo'>
-					<a href="#category?navcat=homepage" title='Blue Collar Depot'></a>
+					<a href="#category?navcat=.homepage" title='Blue Collar Depot'></a><!-- TODO: Add right link -->
 				</span>
 				<nav id='navTop' class='navTop'>
 					<ul>
-						<li><a href="#customer?show=myaccount" 	class='bindByAnchor' title='My Account'>My Account</a><span class='navSeparator'></span></li>
-						<li><a href="#customer?show=orders" 		class='bindByAnchor' title='Order Status'>Order Status</a><span class='navSeparator'></span></li>
-						<li><a href="#customer?show=orders" 		class='bindByAnchor' title='Wish Lists'>Wish Lists</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
-						<li><a href="#customer?show=orders" 		class='bindByAnchor' title='Gift Certificates'>Gift Certificates</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
-						<li><a href="#customer?store=cart" 			class='bindByAnchor' title='View Cart'><span class='cartIcon'></span>View Cart</a><span class='navSeparator'></span></li><!-- TODO: Add right link -->
-						<li><a href="#customer?show=newsletter"	class='bindByAnchor' title='Sign in or Create an account'>Sign in or Create an account</a></li><!-- TODO: Add right link -->
+						<li><a href="#customer?show=myaccount" 						class='bindByAnchor' title='My Account'>My Account</a><span class='navSeparator'></span></li>
+						<li><a href="#company?show=contact" 							class='bindByAnchor' title='Contact'>Contact</a><span class='navSeparator'></span></li>
+						<li><a href="#customer?show=lists" 								class='bindByAnchor' title='Wish Lists'>Wish Lists</a><span class='navSeparator'></span></li>
+						<li><a href="#category?navcat=.gift-certificates"	class='bindByAnchor' title='Gift Certificates'>Gift Certificates</a></li><!-- TODO: ensure link works -->
 					</ul>
 				</nav>
 				<h3 class='phoneNumber'>Call us on (877) 855-8566</h3><!-- TODO: Is this a link? -->
 				<nav id='navBigLinks' class='navBigLinks'>
 					<ul>
 						<li>
-							<a href="customer?show=returns" class='bindByAnchor'><!-- TODO: Add right link -->
+							<a href="company?show=returns" class='bindByAnchor'><!-- TODO: ensure link works -->
 								<span class='bigLinkBox'>
 									<span class='bigLinkIcon returnIcon'></span>
 								</span>
 								<span class='bigLinkBox'>
 									<h4>Free Returns</h4>
-									on product Exchanges
+									on Products and Exchanges
 								</span>
 							</a>
 						</li>
 						<li>
-							<a href="customer?show=returns" class='bindByAnchor'><!-- TODO: Add right link -->
+							<a href="category?navcat=.price-watch" class='bindByAnchor'><!-- TODO: ensure link works -->
 								<span class='bigLinkBox'>
 									<span class='bigLinkIcon moneyIcon'></span>
 								</span>
 								<span class='bigLinkBox'>
-									<h4>120% Price Watch</h4>
-									Best Price Guaranteed
+									<h4>120% Price Watch</h4><!-- 
+									Best Price Guaranteed -->
 								</span>
 							</a>
 						</li>
 						<li>
+							<!-- TODO: Was this removed? -->
 							<a href="customer?store=cart" class='bindByAnchor'><!-- TODO: Add right link -->
 								<span class='bigLinkBox'>
 									<span class='bigLinkIcon basketIcon'></span>
@@ -141,21 +138,22 @@ app.u.loadScript(app.vars.baseURL+"_blueCollarDepot_darrells_init.js");
 									0 items<!-- TODO: Add item count -->
 								</span>
 							</a>
-							<a href="#"><!-- TODO: Add right link -->
+							<a href="#"><!-- TODO: Add right link --><!-- TODO: Is cart and checkout same href? -->
 								<span class='bigLinkBox'>
-									<span class='checkoutButton'>Checkout</span>
+									<span class='checkoutButton'><h4>Checkout</h4></span>
 								</span>
 							</a>
-						</li><!-- TODO: Is cart and checkout same href? -->
+						</li>
 					</ul>
 				</nav>
 				<nav id='navMenu' class='navMenu'>
 					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
+						<li><a href="#category?navcat=.homepage" title='Home'>Home</a><!-- TODO: Add right link --></li>
+						<li><a href="#category?navcat=.homepage" title='Automotive'>Automotive</a><!-- TODO: Add right link --></li>
+						<li><a href="#category?navcat=.homepage" title='Industrial'>Industrial</a><!-- TODO: Add right link --></li>
+						<li><a href="#category?navcat=.homepage" title='Flame Resistant'>Flame Resistant</a><!-- TODO: Add right link --></li>
+						<li><a href="#category?navcat=.homepage" title='Restaurant'>Restaurant</a><!-- TODO: Add right link --></li>
+						<li><a href="#category?navcat=.homepage" title='Embroidery'>Embroidery</a><!-- TODO: Add right link --></li>
 					</ul>
 				</nav>
 			</header>
