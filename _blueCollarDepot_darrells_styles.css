@@ -19,8 +19,8 @@ html {
 
 body {
   /*width: 100%;*/
-  padding-top: 0;
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
   /*font-family: ;
   color: ;
   background-color: ;*/
@@ -158,12 +158,32 @@ a:active {
 
 /* General */
 
-.mainContainer {
-	width: 1000px; /* TODO: Find correct width */
-	margin: 0 auto;
+.container {
+  width: 1000px; /* TODO: Find correct width */
+  margin: 0 auto;
+}
+
+
+.shadowBottomOuter {
+  -webkit-box-shadow: 0 3px 3px 2px #999;
+     -moz-box-shadow: 0 3px 3px 2px #999;
+          box-shadow: 0 3px 3px 2px #999;
+  /*TODO: make compatible with ie; http://css-tricks.com/snippets/css/css-box-shadow/ */
+}
+
+.shadowBottomInner {
+  -webkit-box-shadow: inset 0 -4px 4px -2px #999;
+     -moz-box-shadow: inset 0 -4px 4px -2px #999;
+          box-shadow: inset 0 -4px 4px -2px #999;
+  /*TODO: make compatible with ie; */
 }
 
 /* Header */
+
+header {
+  border-bottom: 4px solid #D22D7A;
+  /*TODO: get right color and size; */
+}
 
 /* Navigation */
 
@@ -182,17 +202,17 @@ nav ul, nav li {
 /* Top navigation */
 
 .navSeparator:after {
-	margin: 0 0 0 0.6em;
+  margin: 0 0 0 0.6em;
   content: '|';
 }
 
 /*.cartIcon {
-	margin-right: 5px;
-	width: 15px;
-	height: 15px;
-	background-color: gray; /* TODO: Add cart icon *\/
-	display: inline-block;
-	vertical-align: middle;
+  margin-right: 5px;
+  width: 15px;
+  height: 15px;
+  background-color: gray; /* TODO: Add cart icon *\/
+  display: inline-block;
+  vertical-align: middle;
 }*/
 
 .navTop {
@@ -201,65 +221,66 @@ nav ul, nav li {
   /*background-color: black;*/
 }
 
-.navTop li	{
-	/* BUG: space inbetween li's */
-	/*float:left;*/
-	margin: 0;
-	padding: 0.3em 0.1em;
-	display:inline-block;
-	/*background-color: blue;*/
-	font-size: 1.1em;
+.navTop li  {
+  /* BUG: space inbetween li's */
+  /*float:left;*/
+  margin: 0;
+  padding: 0.8em 0.1em;
+  display:inline-block;
+  /*background-color: blue;*/
+  font-size: 1.1em;
 }
 
 .navTop a:link {
-	/*TODO: edit colors*/
-	color: black;
-	text-decoration: none;
+  /*TODO: edit colors*/
+  color: black;
+  text-decoration: none;
 }
 
 .navTop a:visited {
-	color: purple;
-	text-decoration: none;
+  color: purple;
+  text-decoration: none;
 }
 
 .navTop a:hover {
-	color: gray;
-	text-decoration: none;
+  color: gray;
+  text-decoration: none;
 }
 
 .navTop a:active {
   text-decoration: none;
 }
 
-/* Menu navigation */
+/* Big Link navigation */
 
-.navMenu, .navBigLinks {
+.navBigLinks {
   /*display:inline-block;*/
   font-family: arial; /*TODO: get right font;*/
   /*text-align: right;*/
 }
 
-.navMenu a:link, .navBigLinks a:link {
+.navBigLinks a:link {
   color: #333; /*TODO: get right colors*/
   text-decoration: none;
 }
 
-.navMenu a:visited, .navBigLinks a:visited {
+.navBigLinks a:visited {
   color: #333; /*TODO: get right colors*/
   text-decoration: none;
 }
 
-.navMenu a:hover, .navBigLinks a:hover {
+.navBigLinks a:hover {
   color: #111; /*TODO: get right colors*/
   text-decoration: none;
 }
 
-.navMenu a:active, .navBigLinks a: active {
+.navBigLinks a: active {
   text-decoration: none;
 }
 
 .navBigLinks {
   text-align: right;
+  padding-right: 12px;
   /*display: block;*/
   /*background-color: black;*/
 }
@@ -271,18 +292,15 @@ nav ul, nav li {
 }
 
 .navBigLinks li {
-	width: 180px;
+  width: 180px;
   /*height: 40px;*/
-	margin: 0;
-	padding: 0.3em 0.1em;
+  margin: 0;
+  padding: 0.3em 0.1em;
   /*height: 60px;*/
-	/*display: inline-block;*/
-	font-size: 1em;
-	text-align: center;
-	border: 1px solid #111;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	/*vertical-align: bottom;*/
+  /*display: inline-block;*/
+  font-size: 1em;
+  text-align: center;
+  /*vertical-align: bottom;*/
 }
 
 .navBigLinks h4 {
@@ -293,7 +311,7 @@ nav ul, nav li {
   font-size: 1.5em;
   line-height: 1em;
   white-space:nowrap;
-  /*letter-spacing: -0.1em;*/
+  letter-spacing: -0.1em;
   /*TODO: figure out how to squeeze text */
 }
 
@@ -347,36 +365,124 @@ a:active .checkoutButton {
 }
 
 .returnIcon {
-	/*TODO: add image;*/
+  /*TODO: add image;*/
 }
 
 .moneyIcon {
-	/*TODO: add image;*/
+  /*TODO: add image;*/
 }
 
 .basketIcon {
-	/*TODO: add image;*/
+  /*TODO: add image;*/
 }
+
+/* Menu navigation */
+
+.navMenu, .navBigLinks li {
+  border: 1px solid #555;
+  border-bottom: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.navMenu li {
+  /*width: 180px;*/
+  /*height: 40px;*/
+  /*margin: 0;
+  padding: 1em 1em;*/
+  /*height: 60px;*/
+  /*display: inline-block;*/
+  /*font-size: 1em;*/
+  text-align: center;
+  
+  /*vertical-align: bottom;*/
+}
+
+.navMenu h2 {
+  font-size: 1.6em;
+  line-height: 1em;
+  font-family: arial;
+  margin: 0;
+  padding: 0.8em 0.8em;
+  color: #444; /*TODO: get right colors*/
+  /*TODO: get right font and color;*/
+}
+
+.navMenu a:link {
+  text-decoration: none;
+}
+
+.navMenu a:visited {
+  color: #333; /*TODO: get right colors*/
+  text-decoration: none;
+}
+
+.navMenu a:hover {
+  color: #111; /*TODO: get right colors*/
+  text-decoration: none;
+}
+
+.navMenu a:active {
+  text-decoration: none;
+}
+
+.navMenu .current h2 {
+  background-color: #2E66CC;
+  outline: 1px solid #20338E;
+  color: white;
+  /*TODO: add gradient;*/
+}
+
+/*.navMenuSeparator {
+
+}*/
 
 /* Logo */
 
 .topLogo {
-	/*width: 200px;
-	height: 150px;*/
-	background-color: gray; /* TODO: add image bg; */
-	float: left;
+  /*width: 200px;
+  height: 150px;*/
+  background-color: gray; /* TODO: add image bg; */
+  float: left;
 }
 
 .topLogo a {
-	width: 200px;
-	height: 150px;
-	display: inline-block;
+  width: 200px;
+  height: 125px;
+  display: inline-block;
 }
 
 .phoneNumber {
-	margin: 20px 0 15px;
+  margin: 20px 0 20px;
   padding: 0;
-	text-align: right;
+  text-align: right;
   font-size: 1.8em;
-	/* TODO: Add right font; */
+  color: #444;
+  /* TODO: Add right font and color; */
+}
+
+/* Content */
+
+.content {
+  vertical-align: top;
+}
+
+/* Sub menu */
+
+.sidebar {
+  width: 200px;
+  /*display: inline-block;*/
+  float: left;
+}
+
+.sidebar h3 {
+  text-transform: uppercase;
+
+}
+
+/* View */
+
+.viewContainer {
+  width: 760px;
+  display: inline-block;
 }
